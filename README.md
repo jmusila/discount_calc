@@ -28,4 +28,12 @@ Composer
 | -------------------------------|:---------------------------------------:|
 | POST /api/payment_calculation  | Returns Discounted Total Cost           |
 |                                                                          |
+
+- Request Body Example
+```
+{
+	"cart_total" : 5000,
+	"gift_card_ids" : [6, 7, 8]
+}
+```
     

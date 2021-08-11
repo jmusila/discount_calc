@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        GiftCard::truncate();
+        GiftCardType::truncate();
         GiftCardType::factory(5)->create();
         GiftCard::factory(5)->create();
     }

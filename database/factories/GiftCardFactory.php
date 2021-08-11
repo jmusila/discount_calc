@@ -23,11 +23,11 @@ class GiftCardFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->colorName,
             'type_id' => function () {
                 return GiftCardType::factory()->create()->id;
             },
-            'value' => 100
+            'value' => $this->faker->numberBetween(100, 100)
         ];
     }
 }

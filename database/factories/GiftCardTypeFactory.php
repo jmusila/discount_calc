@@ -22,7 +22,7 @@ class GiftCardTypeFactory extends Factory
     public function definition()
     {
         return [
-            'max_avail_value' => $this->faker->numberBetween(100, 100)
+            'max_avail_value' => $this->faker->numberBetween(20, 100)
         ];
     }
 }

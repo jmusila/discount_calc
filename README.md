@@ -36,4 +36,6 @@ Composer
 	"gift_card_ids" : [6, 7, 8]
 }
 ```
+
+- [Postman Collection](https://www.getpostman.com/collections/e68c244fb867c20e22bf)
     

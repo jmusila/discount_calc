@@ -38,4 +38,7 @@ Composer
 ```
 
 - [Postman Collection](https://www.getpostman.com/collections/e68c244fb867c20e22bf)
-    
+
+### Testing on Web
+- Run `$ php artisan serve` to start the server
+- Open your favourite browser and paste the generated server url

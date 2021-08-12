@@ -28,7 +28,6 @@
                         <div class="form-group">
                             <label for="gift_card_ids">Gift Cards</label>
                             <select name="gift_card_ids[]" class="form-control" multiple>
-                            <option value="">Select Gift Card</option>
                                 @foreach($gifts as $gift)
                                 <option value="{{ $gift->id }}">
                                     {{ $gift->name }}

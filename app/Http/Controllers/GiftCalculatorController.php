@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class GiftCalculatorController extends Controller
 {
+    /**
+     * Calculate the Total Cart Payment after the Discount
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function calculatePayment(Request $request)
     {
         $cart_total = $request->input('cart_total');
-        
+
         $gift_card_ids = $request->input('gift_card_ids');
 
         if (!empty($cart_total)) {
@@ -27,6 +32,11 @@ class GiftCalculatorController extends Controller
         }
     }
 
+    /**
+     * Handle the Calculation
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function calculateDiscount($cart_total, $gift_card_ids)
     {
         $giftCardsTable = (new GiftCard())->getTable();

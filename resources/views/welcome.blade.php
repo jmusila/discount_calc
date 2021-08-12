@@ -19,7 +19,7 @@
            <div class="card card-default">
                 <div class="card-header">Calculate Discount</div>
                 <div class="card-body">
-                    <form action="/store-todos" method="POST">
+                    <form action="/payment_calculation" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="cart_total">Cart Total</label>
@@ -29,7 +29,7 @@
                             <label for="gift_card_ids">Gift Cards</label>
                             <select name="gift_card_ids[]" class="form-control" multiple>
                                 @foreach($gifts as $gift)
-                                <option value="{{ $gift->id }}">
+                                <option value="{{ $gift->type_id }}">
                                     {{ $gift->name }}
                                 </option>
                                 @endforeach

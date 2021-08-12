@@ -62,4 +62,17 @@ class GiftCalculatorController extends Controller
                 'gift_discount' => $total_discount
         ], 200);
     }
+
+    public function getCalculation(Request $request)
+    {
+        $calculation = $this->calculatePayment($request);
+
+        $calculation = json_encode($calculation);
+
+        $calculation = json_decode($calculation);
+
+        $calculation = collect($calculation)->flatten();
+
+        return view('calculation')->with('calculation', $calculation);
+    }
 }

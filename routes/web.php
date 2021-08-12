@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontEnd\CalculatorController;
+use App\Http\Controllers\GiftCalculatorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [CalculatorController::class, 'index']);
+
+Route::post('/payment_calculation', [GiftCalculatorController::class, 'getCalculation']);
+
+Route::post('/redirect_back', function () {
+    return redirect('/');
+});

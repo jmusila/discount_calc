@@ -23,7 +23,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="cart_total">Cart Total</label>
-                            <input type="text" class="form-control" name="cart_total">
+                            <input type="text" class="form-control" name="cart_total" required>
                         </div>
                         <div class="form-group">
                             <label for="gift_card_ids">Gift Cards</label>

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GiftCardRequest;
 use App\Models\GiftCard;
 use App\Models\GiftCardType;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class GiftCalculatorController extends Controller
@@ -14,11 +14,11 @@ class GiftCalculatorController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function calculatePayment(Request $request)
+    public function calculatePayment(GiftCardRequest $request)
     {
         $cart_total = $request->input('cart_total');
 
-        $gift_card_ids = $request->input('gift_card_ids');
+        $gift_card_ids = $request->input('gift_card_ids', []);
 
         if (!empty($cart_total)) {
             $discount = $this->calculateDiscount($cart_total, $gift_card_ids);
@@ -63,7 +63,7 @@ class GiftCalculatorController extends Controller
         ], 200);
     }
 
-    public function getCalculation(Request $request)
+    public function getCalculation(GiftCardRequest $request)
     {
         $calculation = $this->calculatePayment($request);
 

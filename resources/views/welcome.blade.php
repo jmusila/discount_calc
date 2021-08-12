@@ -36,7 +36,7 @@
                             </select>
                         </div>
                         <div class="form-group float-right">
-                            <button type="submit" class="btn btn-success">Calculate Discount</button>
+                            <button type="submit" class="btn btn-primary">Calculate Discount</button>
                         </div>
 
                     </form>

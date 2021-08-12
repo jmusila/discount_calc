@@ -17,7 +17,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
            <div class="card card-default">
-                <h4 class="text-center">Yaay! Gift(s) applied! 😂</h4>
+                <h4 class="text-center">Yaay! Discount applied! 😂</h4>
                 <p class="text-center">Payable amount : {{$calculation['1']->payable_amount}}</p>
                 <p class="text-center">Gift Discount : {{$calculation['1']->gift_discount}}</p>
            </div>

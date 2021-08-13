@@ -23,7 +23,7 @@
                 <p class="text-center">
                     <h6 class="text-center"><b>Applied Gift Card(s)</b></h6>
                     @foreach($calculation['1']->gifts as $gift)
-                        <ul class="text-center"><i>{{ $gift->name }}({{ $gift->value }})</i></ul>
+                        <ul class="text-center"><i>{{ $gift->name }} (<b style="font-size: 10px;">{{ $gift->max_avail_value }}%</b> of {{ $gift->value }})</i></ul>
                     @endforeach
                 </p>
            </div>

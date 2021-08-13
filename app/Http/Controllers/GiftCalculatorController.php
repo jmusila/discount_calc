@@ -65,6 +65,7 @@ class GiftCalculatorController extends Controller
         return response()->json([
                 'status' => 'success',
                 'gifts' => $gifts,
+                'discount' => $discount,
                 'total_cart' => $cart_total,
                 'payable_amount' => $payable_amount,
                 'gift_discount' => $total_discount

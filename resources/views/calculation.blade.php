@@ -20,6 +20,12 @@
                 <h4 class="text-center">Yaay! Discount applied! 😂</h4>
                 <p class="text-center">Payable amount : {{$calculation['1']->payable_amount}}</p>
                 <p class="text-center">Gift Discount : {{$calculation['1']->gift_discount}}</p>
+                <p class="text-center">
+                    <h6 class="text-center"><b>Applied Gift Card(s)</b></h6>
+                    @foreach($calculation['1']->gifts as $gift)
+                        <ul class="text-center"><i>{{ $gift->name }}({{ $gift->value }})</i></ul>
+                    @endforeach
+                </p>
            </div>
         </div>
     </div>

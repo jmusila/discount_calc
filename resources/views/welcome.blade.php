@@ -30,7 +30,7 @@
                             <select name="gift_card_ids[]" class="form-control" multiple>
                                 @foreach($gifts as $gift)
                                 <option value="{{ $gift->type_id }}">
-                                    {{ $gift->name }}
+                                    {{ $gift->name }}({{ $gift->value }})
                                 </option>
                                 @endforeach
                             </select>

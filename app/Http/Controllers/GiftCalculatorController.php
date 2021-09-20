@@ -21,9 +21,7 @@ class GiftCalculatorController extends Controller
         $gift_card_ids = $request->input('gift_card_ids', []);
 
         if (!empty($cart_total)) {
-            $discount = $this->calculateDiscount($cart_total, $gift_card_ids);
-
-            return $discount;
+            return $this->calculateDiscount($cart_total, $gift_card_ids);
         } else {
             return response()->json([
                 'status' => 'error',

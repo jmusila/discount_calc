@@ -51,16 +51,14 @@ class GiftCalculatorController extends Controller
         if ($gifts->count() > 1) {
             $discount = $gifts->map(function ($gift_card) {
                 return $gift_card->max_avail_value/100 * $gift_card->value;
-            });
+            })->sum();
         } else {
             $discount = $gifts->map(function ($gift_card) {
                 return $gift_card->value;
-            });
+            })->sum();
         }
 
-        $total_discount = $discount->sum();
-
-        $payable_amount = $cart_total - $total_discount;
+        $payable_amount = $cart_total - $discount;
 
         return response()->json([
                 'status' => 'success',
@@ -68,7 +66,7 @@ class GiftCalculatorController extends Controller
                 'discount' => $discount,
                 'total_cart' => $cart_total,
                 'payable_amount' => $payable_amount,
-                'gift_discount' => $total_discount
+                'gift_discount' => $discount
         ], 200);
     }
 

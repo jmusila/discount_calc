@@ -46,15 +46,15 @@ class GiftCalculatorController extends Controller
                 ->join($giftCardTypesTable, $giftCardsTable . '.type_id', '=', $giftCardTypesTable . '.id')
                 ->get();
 
-        if ($gifts->count() > 1) {
-            $discount = $gifts->map(function ($gift_card) {
+        $discount = $gifts->when($gifts->count() > 1, function ($query) use ($gifts) {
+            return $gifts->map(function ($gift_card) {
                 return $gift_card->max_avail_value/100 * $gift_card->value;
             })->sum();
-        } else {
-            $discount = $gifts->map(function ($gift_card) {
-                return $gift_card->value;
-            })->sum();
-        }
+        }, function ($query) use ($gifts) {
+            return $gifts->map(function ($gift_card) {
+                return $gift_card;
+            })->sum('value');
+        });
 
         $payable_amount = $cart_total - $discount;
 

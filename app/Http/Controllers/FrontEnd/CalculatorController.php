@@ -17,8 +17,6 @@ class CalculatorController extends Controller
     {
         $gifts = GiftCard::all();
 
-        
-
         return view('welcome')->with('gifts', $gifts);
     }
 }
